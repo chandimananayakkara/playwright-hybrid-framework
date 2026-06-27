@@ -1,5 +1,4 @@
 import type { Page, Locator } from "@playwright/test";
-import type { UserLogin } from "../models/UserLogin.js";
 
 export class LoginPage {
   private page: Page;

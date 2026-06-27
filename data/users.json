@@ -1,6 +1,24 @@
 {
-    "validUser":{
-        "email":"gitam56366@divahd.com",
-        "password":"Apple@123"
-    }
+  "validUser": {
+    "email": "gitam56366@divahd.com",
+    "password": "Apple@123"
+  },
+  "newUser": {
+    "title": "Mr",
+    "name": "John Doe",
+    "email": "",
+    "password": "Password@123",
+    "day": "10",
+    "month": "May",
+    "year": "1995",
+    "firstName": "John",
+    "lastName": "Doe",
+    "company": "OpenAI Technologies",
+    "address": "123 Main Street",
+    "country": "Canada",
+    "state": "Ontario",
+    "city": "Toronto",
+    "zipCode": "M5V 3L9",
+    "mobile": "14165551234"
+  }
 }
