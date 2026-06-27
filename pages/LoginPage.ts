@@ -24,19 +24,28 @@ export class LoginPage {
     await this.loginBtn.click();
   }
 
-  async getValidationMessasge(field:string){
-    let element:Locator
-    
-    if(field==='email'){
-        element = await this.page.getByTestId('login-email')
-    }else{
-        element = await this.page.getByTestId('login-password')
-    }
-
+  async getValidationMessage(field:'email' | 'password'){
+    const element = field === 'email'? this.emailInput : this.passwordInput
     const message = await element.evaluate((ele:HTMLInputElement)=>{
         return ele.validationMessage
     })
 
     return message
+  }
+
+  get emailInputField(){
+    return this.emailInput
+  }
+
+  get passwordInputField(){
+    return this.passwordInput
+  }
+
+  get loginButton(){
+    return this.loginBtn
+  }
+
+  get loginTitle(){
+    return this.page.getByRole('heading', {name:'Login to your account'})
   }
 }

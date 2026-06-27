@@ -12,10 +12,10 @@ test.describe("Login Page Tests", () => {
   });
 
   test('Should show all login fields after navigate to login page', async ({page})=>{
-    await expect(page.getByRole('heading', {name:'Login to your account'})).toBeVisible()
-    await expect(page.getByTestId('login-email')).toBeVisible()
-    await expect(page.getByTestId('login-password')).toBeVisible()
-    await expect(page.getByTestId('login-button')).toBeVisible()
+    await expect(loginPage.loginTitle).toBeVisible()
+    await expect(loginPage.emailInputField).toBeVisible()
+    await expect(loginPage.passwordInputField).toBeVisible()
+    await expect(loginPage.loginButton).toBeVisible()
   })
 
   test("Should login with valid credentials", async ({ page }) => {
@@ -33,29 +33,25 @@ test.describe("Login Page Tests", () => {
   test("Should move to next element after pressing tab key", async ({
     page,
   }) => {
-    let emailInput = page.getByTestId("login-email");
-    let passwordInput = page.getByTestId("login-password");
-    let loginBtn = page.getByTestId("login-button");
-    await emailInput.fill(testData.validUser.email);
-    await emailInput.press("Tab");
-    await expect(passwordInput.isEnabled());
-    await passwordInput.fill(testData.validUser.password);
-    await expect(loginBtn.isEnabled());
-    await loginBtn.click();
+    await loginPage.emailInputField.fill(testData.validUser.email);
+    await loginPage.emailInputField.press("Tab");
+    await expect(loginPage.passwordInputField).toBeFocused();
+    await loginPage.passwordInputField.fill(testData.validUser.password);
+    await loginPage.loginButton.click();
   });
 
   test("Should not logged without all required credentials", async ({
     page,
   }) => {
     await loginPage.fillLoginPage(" ", testData.validUser.password);
-    expect(await loginPage.getValidationMessasge("email")).toContain(
+    expect(await loginPage.getValidationMessage("email")).toContain(
       "Please fill out this field",
     );
   });
 
   test('Should not logged in not providing both required credentials', async ({page})=>{
     await loginPage.fillLoginPage(' ', ' ')
-     expect(await loginPage.getValidationMessasge("email")).toContain(
+     expect(await loginPage.getValidationMessage("email")).toContain(
       "Please fill out this field",
     );
   })
