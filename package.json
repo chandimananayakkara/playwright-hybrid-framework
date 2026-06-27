@@ -1,0 +1,23 @@
+{
+  "name": "playwright-hybrid-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chandimananayakkara/playwright-hybrid-framework.git"
+  },
+  "keywords": [],
+  "author": "Chandima Nanayakkara",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/chandimananayakkara/playwright-hybrid-framework/issues"
+  },
+  "homepage": "https://github.com/chandimananayakkara/playwright-hybrid-framework#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.61.1",
+    "@types/node": "^26.0.1"
+  }
+}
