@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 import { LoginPage } from "../pages/LoginPage.js";
 import testData from "../data/users.json" with { type: "json" };
-import type { UserLogin } from "../models/UserLogin.js";
 
 test.describe("Login Page Tests", () => {
   let loginPage: LoginPage;
