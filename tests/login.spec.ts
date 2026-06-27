@@ -8,6 +8,7 @@ test.describe("Login Page Tests", () => {
   test.beforeEach(async ({ page }) => {
     loginPage = new LoginPage(page);
     await loginPage.navigateToLoginPage();
+    
   });
 
   test('Should show all login fields after navigate to login page', async ({page})=>{
