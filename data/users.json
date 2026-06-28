@@ -20,5 +20,12 @@
     "city": "Toronto",
     "zipCode": "M5V 3L9",
     "mobile": "14165551234"
+  },
+  "contactForm":{
+    "name":"John Doe",
+    "email":"gitam56366@divahd.com",
+    "subject":"Test Subject",
+    "message":"Message content",
+    "file":"data/fileImage.jpg"
   }
 }
